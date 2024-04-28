@@ -7,6 +7,5 @@ public class Week2Task {
 
         int intVal1 = (int) floatVal1;
         System.out.println("The integer is " + intVal1);
-
     }
 }
