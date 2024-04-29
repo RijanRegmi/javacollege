@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class ForLoop {
     public static void main(String[] args) {
         /* USe for loop when condition is fixed */
