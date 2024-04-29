@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class WhileLoop {
     public static void main(String[] args) {
         int count = 0;
@@ -14,6 +16,15 @@ public class WhileLoop {
          * In while loop the condition is checked at the begaining
          * if the condition is false in inital check ythe loop will not run
          */
+
+        System.out.println("Please type the value between 0-100");
+        Scanner scan = new Scanner(System.in);
+        int inputValue = scan.nextInt();
+        while (inputValue < 0 || inputValue > 100) {
+            System.out.println("Please input between 0-100");
+            inputValue = scan.nextInt();
+        }
+        System.out.println("End loop");
     }
 
 }
