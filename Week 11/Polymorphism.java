@@ -18,6 +18,20 @@ public class Polymorphism {
         Document d3 = new Office365();
         d3.print("Xeroz");
         // cannot access d3.internet
+
+        Spreadsheet sp = new Spreadsheet();
+        sp.addRow(5);
+        sp.addColumn(3);
+
+        Spreadsheet msExcel = new MsExcel();
+        msExcel.addRow(7);
+        msExcel.addColumn(4);
+
+        System.out.println(mo.subtraction(10, 5));
+        System.out.println(mo.subtraction(1.1, 2.2, 3.3));
+        mo.subtraction(3.5);
+        mo.subtraction(7);
+        System.out.println(mo.subtraction(10, 20, 2.5));
     }
 }
 
@@ -45,6 +59,26 @@ class MathOperation {
     // as function with 2 int is already made
     void add() {
         System.out.println("Invalid Operation");
+    }
+
+    int subtraction(int num1, int num2) {
+        return num1 - num2;
+    }
+
+    double subtraction(double num1, double num2, double num3) {
+        return num1 - num2 - num3;
+    }
+
+    void subtraction(double num1) {
+        System.out.println("Invalid Operation");
+    }
+
+    void subtraction(int num1) {
+        System.out.println("Invalid Operation");
+    }
+
+    double subtraction(int num1, int num2, double num3) {
+        return num1 - num2 - num3;
     }
 }
 
@@ -96,3 +130,27 @@ class Office365 extends MsWord {
 // take 1 int and print invalid operation
 // take 2 int and double and return double
 // call these function from MathOperation object
+
+class Spreadsheet {
+    public void addRow(int rows) {
+        System.out.println(rows + " row added");
+    }
+
+    public void addColumn(int columns) {
+        System.out.println(columns + " column added");
+    }
+}
+
+class MsExcel extends Spreadsheet {
+    String fileType = "Excel";
+
+    @Override
+    public void addRow(int rows) {
+        System.out.println(rows + " rows added in Excel");
+    }
+
+    @Override
+    public void addColumn(int columns) {
+        System.out.println(columns + " columns added in Excel");
+    }
+}
