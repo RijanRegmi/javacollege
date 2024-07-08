@@ -69,6 +69,29 @@ public class ExceptionHandling {
     static void ensureException() throws Exception {
         System.out.println("To run this must wrap in try catch");
     }
+
+    static void main(int num) {
+        try {
+            int number1 = 10;
+            int number2 = number1 - 10;
+            int number3 = number1 / number2; // This will throw an ArithmeticException
+            String name;
+            // The following line would cause a compilation error due to uninitialized
+            // variable
+            // System.out.println(name.length());
+            String[] names = new String[100];
+            names[0] = "Ram";
+            names[110] = "Oskar"; // This will throw an ArrayIndexOutOfBoundsException
+        } catch (ArithmeticException ex) {
+            System.out.println("Arithmetic exception occurred");
+        } catch (NullPointerException ex) {
+            System.out.println("Null pointer exception occurred");
+        } catch (ArrayIndexOutOfBoundsException ex) {
+            System.out.println("Array index out of bounds exception occurred");
+        } finally {
+            System.out.println("Completed exception handling");
+        }
+    }
 }
 
 // Task
